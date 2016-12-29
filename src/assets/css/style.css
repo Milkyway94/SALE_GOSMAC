@@ -1,0 +1,77 @@
+.sologan{
+    font-size: 30px;
+    font-weight: bold;
+    color: #e76131;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 25px;
+}
+.topnavigation{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;  
+    margin-bottom: 0px !important;
+    background: #262626;
+    border-radius: 0 !important;
+}
+#sidebar {
+    -moz-transition: width .25s;
+    -o-transition: width .25s;
+    -webkit-transition: width .25s;
+    transition: width .25s;
+    height: 100%;
+    min-height: 550px; 
+}
+#sidebar {
+    background: #262626;
+    color: #fff;
+    width: 100%;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+    padding-top: 10px;
+}
+#sidebar li {
+    border-bottom: 1px solid #333;
+}
+#sidebar li a {
+    color: #eee;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px;
+    border-bottom: 1px solid #111;
+    line-height: 2em;
+    font-size: 13px;
+    text-align: center
+}
+#sidebar>ul>li>a:hover{
+    text-decoration: unset;
+}
+#sidebar>ul>li:hover{
+    background: #337ab7;
+}
+#sidebar li a span {
+    padding: 10px;
+}
+#sidebar li a i {
+    font-size :24px;
+    opacity: 0.8;
+}
+.left-bar{
+    margin: 0;
+}
+.navbar{
+    border: none !important;
+}
+.product-panel{
+    margin: 10px 10px 0px -10px;
+}
+.btn-flat{
+    border-radius: 0;
+}
+@media (min-width: 768px){
+    .leftside {
+        width: 12.666667% !important;
+    }
+}
