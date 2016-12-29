@@ -1,3 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-size:13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    color: #0473BB;
+    text-decoration: none;
+}
+a:hover{
+    color:#F26B2F;
+}
 .sologan{
     font-size: 30px;
     font-weight: bold;
@@ -10,7 +25,7 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;  
     margin-bottom: 0px !important;
-    background: #262626;
+    background: #ECF0F5;
     border-radius: 0 !important;
 }
 #sidebar {
@@ -22,25 +37,23 @@
     min-height: 550px; 
 }
 #sidebar {
-    background: #262626;
+    background: #ECF0F5;
     color: #fff;
     width: 100%;
 }
 .list-unstyled {
+    border-top:1px solid #fff; 
     padding-left: 0;
     list-style: none;
-    padding-top: 10px;
 }
 #sidebar li {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #fff;
 }
 #sidebar li a {
-    color: #eee;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     padding: 10px;
-    border-bottom: 1px solid #111;
     line-height: 2em;
     font-size: 13px;
     text-align: center
@@ -48,8 +61,8 @@
 #sidebar>ul>li>a:hover{
     text-decoration: unset;
 }
-#sidebar>ul>li:hover{
-    background: #337ab7;
+#sidebar>ul>li a:hover{
+
 }
 #sidebar li a span {
     padding: 10px;
@@ -70,8 +83,18 @@
 .btn-flat{
     border-radius: 0;
 }
-@media (min-width: 768px){
-    .leftside {
-        width: 12.666667% !important;
-    }
+.fl{
+    float:left;
 }
+.fr{float:right}
+.fw{
+    float: left;
+    width: 100%;
+}
+.w100{
+    width:100%;
+}
+.logo{
+    text-align: center;
+}
+.img-logo img{margin: 0 auto}
