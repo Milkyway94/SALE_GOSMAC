@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const execquery=require('../API/Controller/productController');
+const productController = require('../API/Controller/productController');
 // declare axios for making http requests
 const axios = require('axios');
 
 /* GET api listing. */
-router.get('/', (req, res) => {
-  res.send('api works');
-});
+ router.get('/api', (req, res) => {
+   res.send('Danh sách API: \n - Lấy tất cả sản phẩm: api/product');
+ });
 
-// Get all posts
-router.get('/product', (req, res) => {
-  // Get posts from the mock api
-  // This should ideally be replaced with a service that connects to MongoDB
-  execquery(res,"SELECT * FROM StorageProduct");
-});
+var api=function(app){
+  app.get("/api/product", function(req, res){
+    productController.getProducts(res);  
+  });
+  app.post("/api/product", function(req, res){
 
-module.exports = router;
+  })
+}
+module.exports = api;
