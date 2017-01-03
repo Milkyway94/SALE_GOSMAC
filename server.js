@@ -1,4 +1,4 @@
-const express = require('express');
+const express=require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
-api(app);
+app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
