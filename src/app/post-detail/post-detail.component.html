@@ -1,0 +1,17 @@
+<div class="fw">
+<p>
+  post-detail works!
+</p>
+<div ng-if="posts">
+  <h2>{{posts.P_Name}}</h2>
+  <div>
+    <label>id: </label>{{posts.P_ID}}
+  </div>
+  <div>
+    <label>Tên sản phẩm: </label>
+    <input placeholder="name" [(ngModel)]="posts.P_Name">
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
+</div>
