@@ -22,7 +22,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Advanced Form Elements
+                {{title}}
                 <small>Preview</small>
             </h1>
             <ol class="breadcrumb">
@@ -32,17 +32,22 @@
             </ol>
         </section>
         <section class="content">
-            <router-outlet></router-outlet>
+            <div class='box box-danger'>
+                <div class='box-body'>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
         </section>
+        <!-- #endcontentwrapper -->
     </div>
 </div>
 <div class="fw">
-<footer class="main-footer">
-    <div class="fl">
-        <strong>Copyright © 2015-2017 GoSMAC.</strong> All rights reserved.
-    </div>
-    <div class="fr">
-        Version 1.0
-    </div>
-</footer>
+    <footer class="main-footer">
+        <div class="fl">
+            <strong>Copyright © 2015-2017 GoSMAC.</strong> All rights reserved.
+        </div>
+        <div class="fr">
+            Version 1.0
+        </div>
+    </footer>
 </div>

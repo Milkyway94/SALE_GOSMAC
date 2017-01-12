@@ -11,7 +11,7 @@ export class AppComponent {
     //typescript prop: type
     slogan: string = "Hệ thống quản lý bán hàng";
     
-    pageTitle: string = `Hệ thống quản lý bán hàng`;
+    pageTitle: string = `Hệ thống quản lý bán hàng GoSMACVN`;
     public people:any = [
         {
              name: 'Nguyễn Hữu Thành',

@@ -1,74 +1,68 @@
-<div class='box box-danger'>
-  <div class='box-header'>
-    <h3 class="box-title">{{pageTitle}} Quản lý sản phẩm</h3>
+<div class='row form-group form-list'>
+  <div class="col-sm-2">
+    <a class="btn btn-success btn-flat" [routerLink]="['./product-add']"><i class="fa fa-plus"></i>Thêm mới</a>
   </div>
-  <div class='box-body'>
-    <div class='row form-group'>
-      <div class="col-sm-2">
-        <a class="btn btn-success btn-flat" [routerLink]="['./AddProduct']"><i class="fa fa-plus"></i>Thêm mới</a>
-      </div>
-      <div class="col-sm-10">
-        <label for="Filter" class="col-sm-2">Tên sản phẩm</label>
-        <div class='col-md-4'>
-          <form class="form-inline">
-            <div class="form-group">
-            <input type='text' class="form-control" [(ngModel)]="keyword" name="keyword" placeholder="Nhập tên sản phẩm cần tìm" />
-            <button (click)="Search()" class="btn btn-danger btn-flat">Tìm kiếm</button>
-            </div>
-          </form>
+  <div class="col-sm-10">
+    <label for="Filter" class="col-sm-2">Tên sản phẩm</label>
+    <div class='col-md-4'>
+      <form class="form-inline">
+        <div class="form-group">
+          <input type='text' class="form-control" [(ngModel)]="keyword" name="keyword" placeholder="Nhập tên sản phẩm cần tìm" />
         </div>
-        <label for="Filter" class="col-sm-2">Danh mục SP</label>
-        <div class='col-md-4'>
-          <select class='col-md-4' class="form-control">
+      </form>
+    </div>
+    <label for="Filter" class="col-sm-2">Danh mục SP</label>
+    <div class='col-md-4'>
+      <select class='col-md-4' class="form-control">
                     <option value="0">All</option>
                     <option value="1">{{1}} </option>
                     <option value="2">{{2}}</option>                                        
                 </select>
-        </div>
-      </div>
-    </div>
-    <div class='table-responsive'>
-      <table class='table table-hover table-bordered table-vertical'>
-        <thead>
-          <tr>
-            <th>
-              <input type="checkbox" (change)="pickAll()"> &nbsp;
-              <button class='btn btn-remove btn-flat btn-sm' (click)='deleteMulti()'>
-                                  Xóa hết
-                                </button>
-            </th>
-            <th>
-              <button class='btn btn-primary btn-flat btn-sm' (click)='toggleImage()'>
-                                  {{showImage ? 'Ẩn' : 'Hiện'}} ảnh
-                                </button>
-            </th>
-            <th>Tên sản phẩm</th>
-            <th>Mã SP</th>
-            <th>Ngày nhập</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let product of posts'>
-            <td>
-              <input type="checkbox" id="{{product.P_ID}}" [(ngModel)]="product.P_ID" #cv [checked]="pickAllPro" (change)="onChange(product.P_ID, cv.checked)">              &nbsp;
-              <button class="btn btn-sm btn-danger btn-flat" (click)="Delete(product.P_ID)"><i class="fa fa-remove"></i></button>
-              <a [routerLink]="['/edit', product.P_ID]" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-            </td>
-            <td>
-              <img *ngIf="showImage" src='{{product.P_Image}}' [title]='product.P_Name' width="100" height="100">
-            </td>
-            <td><a [routerLink]="['./detail', product.P_ID]">
-                            {{product.P_Name}}
-                        </a></td>
-            <td>{{ product.p_Code | lowercase }}</td>
-            <td>{{ product.CreateDate }}</td>
-            <td>{{ product.P_BuyPrice}}</td>
-            <td>{{ product.P_Quantity}}</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
+</div>
+<div class='table-responsive'>
+  <table class='table table-hover table-vertical'>
+    <thead>
+      <tr>
+        <th style="width:10%">
+          <input type="checkbox" (change)="pickAll()"> &nbsp;
+          <button class='btn btn-remove btn-flat btn-sm' (click)='deleteMulti()'>
+                                  Xóa hết
+                                </button>
+        </th>
+        <th style="width:5%;text-align:center">
+          <img src="https://shopmemua.mysapo.vn/images/img-finter.png" alt="">
+          <!--<button class='btn btn-primary btn-flat btn-sm' (click)='toggleImage()'>
+                                  {{showImage ? 'Ẩn' : 'Hiện'}} ảnh
+                                </button>-->
+        </th>
+        <th style="width:15%;text-align:center">Tên sản phẩm</th>
+        <th style="width:15%;text-align:center">Mã SP</th>
+        <th style="width:10%;text-align:center">Ngày nhập</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of posts|productFilter:keyword'>
+        <td>
+          <input type="checkbox" id="{{product.P_ID}}" [(ngModel)]="product.P_ID" #cv [checked]="pickAllPro" (change)="onChange(product.P_ID, cv.checked)">          &nbsp;
+          <button class="btn btn-xs btn-danger btn-flat" (click)="Delete(product.P_ID)"><i class="fa fa-trash"></i></button>
+          <a [routerLink]="['/product/product-edit/', product.P_ID]" class="btn btn-xs btn-warning btn-flat"><i class="fa fa-edit"></i></a>
+        </td>
+        <td>
+          <img src='{{product.P_Image}}' [title]='product.P_Name' width="35" height="35">
+          <!--<img *ngIf="showImage" src='{{product.P_Image}}' [title]='product.P_Name' width="100" height="100">-->
+        </td>
+        <td><a [routerLink]="['/product/product-detail/', product.P_ID]">
+                            {{product.P_Name}}
+                        </a></td>
+        <td>{{ product.p_Code | lowercase }}</td>
+        <td>{{ product.CreateDate }}</td>
+        <td>{{ product.P_BuyPrice}}</td>
+        <td>{{ product.P_Quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,0 +1,129 @@
+<form class="form-horizontal product-form" #f="ngForm">
+    <div class="product-detail col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3>Chi tiết hàng hóa</h3>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Tên sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Name" [(ngModel)]="product.name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Nhà máy sản xuất</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Manufacture" [(ngModel)]="product.P_Manufacture" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Nhãn hiệu SP</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Brand" [(ngModel)]="product.P_Brand" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Mô tả</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Description" [(ngModel)]="product.P_Description" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Danh mục sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="StorageCate_ID" [(ngModel)]="product.StorageCate_ID" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Thông tin sản phẩm</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Detail" [(ngModel)]="product.P_Detail" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Hình ảnh</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_Image" [(ngModel)]="product.P_Image" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Hình ảnh liên quan</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="P_MoreImage" [(ngModel)]="product.P_MoreImage" />
+            </div>
+        </div>
+    </div>
+    <div class="product-setup col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3>Thiết lập ban đầu</h3>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Số lượng ban đầu</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Quantity" [(ngModel)]="product.quantity" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Buy Price</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_BuyPrice" [(ngModel)]="product.buyPrice" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Sell Price</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Weight" [(ngModel)]="product.P_Weight" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Mã sản phẩm</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="p_Code" [(ngModel)]="product.code" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-properties col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3>Tùy chọn hàng hóa (* Dành cho sản phẩm có nhiều tùy chọn)</h3>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Kích thước</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Size" [(ngModel)]="product.P_Size" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Màu sắc</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Color" [(ngModel)]="product.P_Color" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Trọng lượng</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Weight" [(ngModel)]="product.P_Weight" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sn-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Chiều cao</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="P_Length" [(ngModel)]="product.P_Length" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success btn-sm btn-flat" (click)="SaveForm()">Lưu</button>
+            <button type="button" class="btn btn-danger btn-sm btn-flat" (click)="GotoProduct()">Hủy bỏ</button>
+        </div>
+    </div>
+</form>
