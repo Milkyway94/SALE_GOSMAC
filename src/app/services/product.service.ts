@@ -14,8 +14,8 @@ export class ProductService {
     return this._http.get("/api/product")
       .map(res => res.json());
   }
-  Add(product:Product){
-    return this._http.post("/api/product", product)
+  Add(product:Product, token:string){
+    return this._http.post("/api/product", JSON.stringify({product,token}))
       .map(res => res.json());
   }
   // DeletePost (id:string) {

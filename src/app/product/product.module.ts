@@ -7,6 +7,7 @@ import {ProductListComponent } from './product-list.component';
 import {AddProductComponent } from './add-products.component';
 import { ProductComponent } from './product.component';
 import { ProductService } from './../services/product.service';
+import { AuthGuard } from '../_guards/index';
 
 @NgModule({
   declarations: [ProductComponent, ProductListComponent, AddProductComponent],
@@ -17,6 +18,7 @@ import { ProductService } from './../services/product.service';
     RouterModule.forChild([{ 
       path: 'product',
        component: ProductComponent,
+       canActivate: [AuthGuard],
        children: [{ path: '', component: ProductListComponent },
        { path: 'AddProduct', component: AddProductComponent },
       //  { path: 'detail/:id'} //dynamic parameter

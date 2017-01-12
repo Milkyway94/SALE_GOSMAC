@@ -6,14 +6,24 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import {ProductService} from './services/product.service';
-import {AppMenuComponent} from  './appmenu.component';
+import { ProductService } from './services/product.service';
+import { AppMenuComponent } from './appmenu.component';
 import { StorageComponent } from './storage/storage.component'
 
-import {ProductModule} from './product/product.module';
+import { ProductModule } from './product/product.module';
+import { PermissonModule } from './permisson/permisson.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ToturialComponent } from './toturial/toturial.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component'
+
+import { AuthGuard } from './_guards/index';
+
+//back
+
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/Authentication.service';
+
+
 // Define the routes
 
 @NgModule({
@@ -22,22 +32,24 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AppMenuComponent,
     StorageComponent,
     WelcomeComponent,
-    ToturialComponent,
-    ProductDetailComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      //{ path: 'product', component: ProductComponent },
-      // { path: '', redirectTo: 'product', pathMatch: 'full' },
+      { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard]  },
+      { path: 'login', component: LoginComponent },
       
-      { path: '**', redirectTo: '', pathMatch: 'full' }
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
-    ProductModule
+    ProductModule,
+    PermissonModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

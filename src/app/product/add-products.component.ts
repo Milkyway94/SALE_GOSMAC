@@ -23,7 +23,7 @@ export class AddProductComponent implements OnInit {
     this.router.navigate(['/product']);
   }
   SaveForm(){
-    this.productService.Add(this.product)
+    this.productService.Add(this.product, JSON.parse(localStorage.getItem("currentUser")).token)
     .map(res => {
       if(res){
         alert("Thêm mới thành công");

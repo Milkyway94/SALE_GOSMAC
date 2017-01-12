@@ -1,0 +1,90 @@
+<form class="form-horizontal" #f="ngForm" (ngSubmit)="SaveForm()">
+    <fieldset>
+        <legend>Thông tin cá nhân</legend>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Mã nhân viên(dùng để đăng nhập)</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="p_Code" [(ngModel)]="emp.code" />
+            </div>
+            <label class="control-label col-sm-2" for="email">Mật khẩu</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="password" [(ngModel)]="emp.password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Tên nhân viên</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="P_Name" [(ngModel)]="emp.name" />
+            </div>
+            <label class="control-label col-sm-2" for="pwd">Ngày sinh</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="birthday" [(ngModel)]="emp.birthday" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Số CMND</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="CMND" [(ngModel)]="emp.CMND" />
+            </div>
+            <label class="control-label col-sm-2" for="pwd">Số điện thoại</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="SDT" [(ngModel)]="emp.phone" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Email</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="email" [(ngModel)]="emp.email" />
+            </div>
+             <label class="control-label col-sm-2" for="pwd">Chức vụ</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="email" [(ngModel)]="emp.postion" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Địa chỉ thường trú</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="nativeaddress" [(ngModel)]="emp.nativeaddress" rows="4"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Địa chỉ hiện tại</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="currentaddress" [(ngModel)]="emp.currentaddress" rows="4"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Kết hôn?</label>
+            <div class="col-sm-4">
+                <input type="checkbox" class="icheck" name="isMarried" [(ngModel)]="emp.isMarried" />
+            </div>
+            <label class="control-label col-sm-2" for="pwd">Có con</label>
+            <div class="col-sm-4">
+                <input type="checkbox" class="icheck" name="haveChildren" [(ngModel)]="emp.haveChildren" />
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Phân quyền</legend>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Nhóm người dùng</label>
+            <div class="col-sm-10">
+                <select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success btn-sm btn-flat" (click)="SaveForm()"><i class="fa fa-save"></i>&nbsp;Lưu</button>
+            <button type="button" class="btn btn-danger btn-sm btn-flat" (click)="back()"><i class="fa fa-arrow-left"></i>&nbsp;Trở về</button>
+        </div>
+    </div>
+</form>

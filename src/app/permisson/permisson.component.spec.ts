@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ToturialComponent } from './toturial.component';
+import { PermissonComponent } from './permisson.component';
 
-describe('ToturialComponent', () => {
-  let component: ToturialComponent;
-  let fixture: ComponentFixture<ToturialComponent>;
+describe('PermissonComponent', () => {
+  let component: PermissonComponent;
+  let fixture: ComponentFixture<PermissonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToturialComponent ]
+      declarations: [ PermissonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToturialComponent);
+    fixture = TestBed.createComponent(PermissonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

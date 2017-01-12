@@ -2,7 +2,8 @@ const express=require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-
+var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
 // Get our API routes
 const api = require('./server/routes/api');
 
