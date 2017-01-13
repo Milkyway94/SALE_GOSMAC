@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise'
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
@@ -14,24 +14,41 @@ export class ProductService {
     return this._http.get("/api/product")
       .map(res => res.json());
   }
-  Add(product:Product, token:string){
-    return this._http.post("/api/product", JSON.stringify({product,token}))
+
+  GetSingle(id: string): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this._http.get(url)
+      .map((response: Response) => response.json())
+  }
+
+  Add(product: Product) {
+    //console.log(product);
+    return this._http.post(this.url, product)
       .map(res => res.json());
   }
-  // DeletePost (id:string) {
-  //       return this._http.delete(`${this.url}/${id}`) // ...using put request
-  //                        .map(res => res.json()) // ...and calling .json() on the response to return data
-  //   }  
-  UpdatePost(id: string) {
-    const purl = `${this.url}/${id}`;
-    return this._http.get(purl);
-  }
-  Search(keyword: string): Observable<any[]> {
-    return this._http.get(this.url + "?search=" + keyword)
-      .map((res: Response) => res.json());
-  }
-  Delete(id: number): Observable<any> {
-    return this._http.delete(this.url + id)
+  Update(id: string, data: any): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this._http.put(url, data)
       .map((res: Response) => res.json())
+  }
+  //  Update(product: Product): Promise<Product> {
+  //     const Purl = `${this.url}/${product.id}`;
+  //     return this._http
+  //       .put(Purl, JSON.stringify(product), {headers: this.headers})
+  //       .toPromise()
+  //       .then(() => product)
+  //       .catch(this.handleError);
+  //   }
+
+  Delete(id: string): Promise<void> {
+    const url = `${this.url}/${id}`;
+    return this._http.delete(url, { headers: this.headers })
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 }

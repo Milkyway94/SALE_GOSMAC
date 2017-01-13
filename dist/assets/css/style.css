@@ -42,7 +42,7 @@ a:hover{
     color: #b8c7ce;
     width: 100%;
 }
-.sidebar li a:hover{
+.sidebar li a:hover, .sidebar li a.active{
         color: #fff;
     background: #1e282c;
     border-left-color: #e76131;
@@ -57,7 +57,7 @@ a:hover{
     display: block;
     white-space: nowrap;
     overflow: hidden;
-    padding: 10px;
+    padding: 10px 0;
     line-height: 2em;
     font-size: 13px;
     text-align: center;
@@ -72,7 +72,7 @@ a:hover{
     padding: 10px;
 }
 .sidebar li a i {
-    font-size :24px;
+    font-size :18px;
     opacity: 0.8;
 }
 .left-bar{
@@ -156,16 +156,13 @@ a:hover{
     border-bottom-left-radius: 3px;
     padding: 10px;
 }
-.form-control{
-    border-radius: 0;
-}
 /* main by mr.T*/
 .content-wrapper, .right-side, .main-footer {
     -webkit-transition: -webkit-transform .3s ease-in-out,margin .3s ease-in-out;
     -moz-transition: -moz-transform .3s ease-in-out,margin .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out,margin .3s ease-in-out;
     transition: transform .3s ease-in-out,margin .3s ease-in-out;
-    margin-left: 180px;
+    margin-left: 90px;
     z-index: 820;
 }
 .main-sidebar, .left-side {
@@ -174,7 +171,7 @@ a:hover{
     left: 0;
     margin-top: 75px;
     min-height: 100%;
-    width: 180px;
+    width: 90px;
     z-index: 810;
     -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
     -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
@@ -189,7 +186,7 @@ a:hover{
     border-top: 1px solid #d2d6de;
 }
 .content-wrapper{
-    background-color: #ecf0f5;
+    background-color: #EAEFF3;
     z-index: 800;
     min-height: 600px;
 }
@@ -237,4 +234,28 @@ section.content{
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+.table>thead>tr>th{
+    border: 0;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+.product-form h3{
+     font-size: 17px;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+.product-detail, .product-setup , .product-properties {
+        border-bottom: 2px dotted #ddd;
+}
+.form-horizontal .control-label{
+    font-weight: normal;
+}
+.box-body{padding: 10px}
+.product-detail .form-control{
+    width: 300px;
+}
+.form-list{
+    margin-top: 15px;
 }
